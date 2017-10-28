@@ -6,7 +6,7 @@ export default {
       <div class="page">
         <Counter />
         <p>
-          To get started, edit files in <code>./client</code> and save.
+          ANYTHING ANYTHING ANYTHING
         </p>
       </div>
     )
