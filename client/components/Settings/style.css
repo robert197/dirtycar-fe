@@ -1,8 +1,9 @@
-.location {
+.settings {
    position: absolute;
    width: 100%;
+   bottom: 0;
 }
-.location img {
+.settings img {
     float: right;
     padding: 190px;
     width: 122px;

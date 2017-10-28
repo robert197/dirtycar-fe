@@ -2,6 +2,7 @@ import style from './style.css'
 import Waves from '../Waves'
 import CleanCar from '../CleanCar'
 import Location from '../Location'
+import Settings from '../Settings'
 
 export default {
   methods: {
@@ -12,6 +13,7 @@ export default {
   render(h) {
     return (
         <div class={style.services}>
+          <Settings/>
           <Location/>
           <CleanCar/>
           <Waves/>

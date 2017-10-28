@@ -6,8 +6,8 @@ export default {
   },
   render(h) {
     return (
-        <div class={style.location}>
-            <img src="../../../static/placeholder.png"/>
+        <div class={style.settings}>
+            <img src="../../../static/settings.png"/>
         </div>
     )
   }
