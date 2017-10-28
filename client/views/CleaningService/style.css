@@ -1,7 +1,11 @@
-.page {  
+.page {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    color: white;
     animation-name: slideInFromLeft;
     animation-duration: 2.5s;
-    padding: 30px;
+    position: relative;
 }
 
 @keyframes slideInFromLeft {

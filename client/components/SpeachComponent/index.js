@@ -9,7 +9,7 @@ export default {
   methods: {
   },
   created() {
-    this.$store.dispatch('listenToUser')
+    this.$store.dispatch('listenToUser', this.$router)
   },
   render(h) {
     return (

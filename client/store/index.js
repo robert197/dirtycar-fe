@@ -14,7 +14,7 @@ const mutations = {
 }
 
 const actions = {
-  listenToUser ({ commit }) {
+  listenToUser ({ commit }, router) {
     let speech
     const msg = new SpeechSynthesisUtterance('Is everything to your satisfaction?')
     window.speechSynthesis.speak(msg)
@@ -31,10 +31,11 @@ const actions = {
               window.speechSynthesis.speak(msg)
               const msg = new SpeechSynthesisUtterance('Is the car clean?')
               window.speechSynthesis.speak(msg)
+              router.push('cleaning-service')
           }
         }
       }, false)
-    }, 2600)
+    }, 3200)
   }
 }
 

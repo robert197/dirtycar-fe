@@ -13,7 +13,7 @@ export default {
   created() {
     setTimeout(() => {
         this.$router.push('welcome')
-    }, 2000)
+    }, 2200)
     console.log();
   }
 }
