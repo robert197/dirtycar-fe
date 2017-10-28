@@ -1,0 +1,9 @@
+.music {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+}
+.music img {
+    padding: 190px;
+    width: 122px;
+}
