@@ -1,0 +1,14 @@
+.page {  
+    animation-name: slideInFromLeft;
+    animation-duration: 2s;
+    padding: 30px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opcaity: 1;
+    }
+}

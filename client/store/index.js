@@ -15,9 +15,12 @@ const mutations = {
 
 const actions = {
   listenToUser ({ commit }) {
-    const speech = new webkitSpeechRecognition()
-    speech.lang = 'en'
-    speech.start()
+    let speech
+    setTimeout(() => {
+      speech = new webkitSpeechRecognition()
+      speech.lang = 'en'
+      speech.start()
+    }, 2000)
     speech.addEventListener('result', (event) => {
       for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
