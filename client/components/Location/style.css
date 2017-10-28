@@ -1,0 +1,9 @@
+.car {
+   position: absolute;
+   width: 100%;
+}
+.car img {
+    float: right;
+    padding: 190px;
+    width: 122px;
+}
