@@ -7,9 +7,6 @@ export default {
       <transition>
         <div class={style.page}>
           <SpeachComponent />
-          <p>
-            ANYTHING ANYTHING ANYTHING
-          </p>
         </div>
       </transition>
     )
