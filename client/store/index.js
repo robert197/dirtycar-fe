@@ -1,15 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
 const state = {
-  startWave: false
+  startWave: false,
+  startCleanSerivce: true
 }
 
 const mutations = {
   STARTWAVE (state) {
     state.startWave = true
+  },
+  STARTCLEANSERVICE () {
+    state.startCleanSerivce = true;
   }
 }
 
@@ -34,9 +39,15 @@ const actions = {
           if (event.results[i].isFinal) {
               var msg = new SpeechSynthesisUtterance('You said ' + event.results[i][0].transcript)
               window.speechSynthesis.speak(msg)
-              const msg = new SpeechSynthesisUtterance('Is the car clean?')
-              window.speechSynthesis.speak(msg)
-              router.push('cleaning-service')
+              // speak to api
+              axios.post('https://speechservice-dirtycar.training.altemista.cloud/question1',
+              {"text": event.results[i][0].transcript})
+                .then((res) => {
+                  console.log(res)
+                })
+                .catch((err) => {
+                  console.log(err)
+                })
           }
         }
       }, false)
