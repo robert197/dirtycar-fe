@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 const state = {
   startWave: false,
-  startCleanSerivce: true
+  startCleanSerivce: true,
+  satisfaction: null
 }
 
 const mutations = {
@@ -26,7 +27,7 @@ const actions = {
 
   askAboutCleanCar({commit}, router) {
     let speach;
-    const msg = new SpeechSynthesisUtterance('I have this pictures of this car, is it still clean?')
+    const msg = new SpeechSynthesisUtterance('I took this pictures of this car, is it still clean?')
     window.speechSynthesis.speak(msg)
 
     setTimeout(() => {
@@ -77,6 +78,7 @@ const actions = {
               {"text": event.results[i][0].transcript})
                 .then((res) => {
                   console.log(res)
+                  this.state.satisfaction = (res.data.documents[0].score * 100).toString().split('.')[0] + '%';
                 })
                 .then(() => {
                   router.push('cleaning-service')

@@ -17,6 +17,7 @@ export default {
             </div>
 
             <div class={style.mic}>
+                <h3>Your satisfaction is: {this.$store.state.satisfaction}</h3>
                 <img src="../../../static/mic.png"/>
             </div>
         </div>

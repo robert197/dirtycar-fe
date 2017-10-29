@@ -31,11 +31,11 @@
 }
 
 .mic {
-    margin-top: 17em;
+    margin-top: 7em;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1.7em;
 }
 
 .mic img {
