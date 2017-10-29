@@ -45,6 +45,9 @@ const actions = {
                 .then((res) => {
                   console.log(res)
                 })
+                .then(() => {
+                  router.push('cleaning-service')
+                })
                 .catch((err) => {
                   console.log(err)
                 })

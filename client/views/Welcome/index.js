@@ -11,10 +11,10 @@ export default {
     )
   },
   methods: {
-      start: () => {
-          setTimeout(() => {
-            this.$router.push('welcome')
-          }, 2000)
-        }
+    start: () => {
+      setTimeout(() => {
+        this.$router.push('welcome')
+      }, 2000)
+    }
   }
 }

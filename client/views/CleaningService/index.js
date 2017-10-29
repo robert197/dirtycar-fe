@@ -6,12 +6,12 @@ export default {
         <div class={style.page}>
             <div class={style.imagesWraper}>
              
-                <div class={style.leftPicture}>
-                    <img src="../../../static/right-car-pic.jpeg"/>
+                <div>
+                    <img class={style.picture} src="../../../static/right-car-pic.jpeg"/>
                 </div>
              
-                <div class={style.rightPicture} >
-                    <img class={style.rightPicture} src="../../../static/left-car-pic.jpeg"/>
+                <div>
+                    <img class={style.picture} src="../../../static/left-car-pic.jpeg"/>
                 </div>
                 
             </div>
