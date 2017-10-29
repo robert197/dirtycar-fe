@@ -7,6 +7,43 @@
     animation-duration: 2.5s;
     position: relative;
 }
+.imagesWraper {
+    padding-top: 4em;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.leftPicture {
+    float: left;
+    margin-left: 12em;
+    width: 40%;
+}
+.rightPicture {
+    float: right;
+    width: 40%;
+    margin-right: 12em;
+}
+
+.leftPicture img {
+    width: 500px;
+    height: auto;
+}
+.rightPicture img {
+    width: 500px;
+    height: auto;
+}
+
+.mic {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.mic img {
+    width: 300px;
+    height: 300px;
+}
 
 @keyframes slideInFromLeft {
     0% {
