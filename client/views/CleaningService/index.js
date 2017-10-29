@@ -20,7 +20,7 @@ export default {
             <div class={style.bottomPart}>
                 <h3>Your satisfaction is: {this.$store.state.satisfaction}</h3>
                 <div class={style.mic}>
-                    <Waves/>
+                    <Waves class={style.waves}/>
                     <img src="../../../static/mic.png"/>
                 </div>
             </div>

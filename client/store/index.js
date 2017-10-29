@@ -7,7 +7,10 @@ Vue.use(Vuex)
 const state = {
   startWave: false,
   startCleanSerivce: true,
-  satisfaction: null
+  satisfaction: null,
+  whiteListKeywords: [
+    'seat'
+  ]
 }
 
 const mutations = {
@@ -41,10 +44,44 @@ const actions = {
               var msg = new SpeechSynthesisUtterance('You said ' + event.results[i][0].transcript)
               window.speechSynthesis.speak(msg)
               // speak to api
-              axios.post('https://speechservice-dirtycar.training.altemista.cloud/question1',
+              axios.post('https://speechservice-dirtycar.training.altemista.cloud/question2',
               {"text": event.results[i][0].transcript})
                 .then((res) => {
-                  console.log(res)
+                  console.log(res);
+
+                  const msg = parseInt((res.data.documents[0].score * 100).toString().split('.')[0]) > 50
+                    ? new SpeechSynthesisUtterance('Thank you!')
+                    : new SpeechSynthesisUtterance('Can you specify?')
+                  window.speechSynthesis.speak(msg)
+                  
+                  let speech2;
+                  speech2 = new webkitSpeechRecognition()
+                  speech2.lang = 'en'
+                  speech2.start()
+                  speech2.addEventListener('result', (event2) => {
+                    for (var j = event2.resultIndex; j < event2.results.length; j++) {
+                        if (event2.results[j].isFinal) {
+                          axios.post('https://speechservice-dirtycar.training.altemista.cloud/question3',
+                          {"text": event2.results[j][0].transcript})
+                            .then((res) => {
+                              res.data.documents[0].keyPhrases.forEach(function(element) {
+                                if(this.state.whiteListKeywords.indexOf(element.toLowerCase()) < 0) {
+                                  window.speechSynthesis.speak(new SpeechSynthesisUtterance('You can remove ' + element + ' to get 10 free minutes!'))
+                                  window.speechSynthesis.speak(new SpeechSynthesisUtterance('Thank you for using Service'))
+                                }
+                              }, this);
+                            })
+                            .then(() => {
+                              router.push('cleaning-service')
+                            })
+                            .catch((err) => {
+                              console.log(err)
+                            })         
+                        }
+                    }
+                  })
+
+
                 })
                 .then(() => {
                   router.push('cleaning-service')
