@@ -14,6 +14,11 @@ const mutations = {
 }
 
 const actions = {
+
+  start({commit}, router) {
+    router.push('welcome')
+  },
+
   listenToUser ({ commit }, router) {
     let speech
     const msg = new SpeechSynthesisUtterance('Is everything to your satisfaction?')

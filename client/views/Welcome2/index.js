@@ -13,6 +13,6 @@ export default {
   created() {
     setTimeout(() => {
         this.$router.push('services')
-    }, 2000)
+    }, 2500)
   }
 }

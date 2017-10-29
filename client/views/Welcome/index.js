@@ -4,16 +4,17 @@ export default {
   render(h) {
     return (
       <div class={style.welcome}>
-        <div class={style.welcomeText}>
+        <div class={style.welcomeText} onClick={this.$store.dispatch('start', this.$router)}>
             <img src="../../../static/car2go.png"/>
         </div>
       </div>
     )
   },
-  created() {
-    setTimeout(() => {
-        this.$router.push('welcome')
-    }, 2200)
-    console.log();
+  methods: {
+      start: () => {
+          setTimeout(() => {
+            this.$router.push('welcome')
+          }, 2000)
+        }
   }
 }

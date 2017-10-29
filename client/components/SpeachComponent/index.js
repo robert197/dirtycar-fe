@@ -6,8 +6,6 @@ import Settings from '../Settings'
 import Music from '../Music'
 
 export default {
-  methods: {
-  },
   created() {
     this.$store.dispatch('listenToUser', this.$router)
   },
