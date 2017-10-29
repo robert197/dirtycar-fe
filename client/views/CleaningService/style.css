@@ -30,7 +30,7 @@
     animation-duration: 4.8s;
 }
 
-.mic {
+.bottomPart {
     margin-top: 7em;
     position: relative;
     text-align: center;
@@ -38,9 +38,18 @@
     font-size: 1.7em;
 }
 
-.mic img {
+.bottomPart img {
     width: 200px;
     height: 200px;
+}
+
+.mic {
+    position: relative;
+}
+
+.mic Waves {
+    position: relative;
+    bottom: 0;
 }
 
 @keyframes slideInFromLeft {

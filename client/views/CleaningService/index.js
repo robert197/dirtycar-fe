@@ -1,4 +1,5 @@
 import style from './style.css'
+import Waves from '../../components/Waves'
 
 export default {
   render(h) {
@@ -16,14 +17,19 @@ export default {
                 
             </div>
 
-            <div class={style.mic}>
+            <div class={style.bottomPart}>
                 <h3>Your satisfaction is: {this.$store.state.satisfaction}</h3>
-                <img src="../../../static/mic.png"/>
+                <div class={style.mic}>
+                    <Waves/>
+                    <img src="../../../static/mic.png"/>
+                </div>
             </div>
         </div>
     )
   },
   created() {
-    this.$store.dispatch('askAboutCleanCar', this.$router)
+    setTimeout(() => {
+        this.$store.dispatch('askAboutCleanCar', this.$router)
+    }, 1800)
   }
 }

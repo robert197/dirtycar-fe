@@ -26,15 +26,15 @@ const actions = {
   },
 
   askAboutCleanCar({commit}, router) {
-    let speach;
+    let speech;
     const msg = new SpeechSynthesisUtterance('I took this pictures of this car, is it still clean?')
     window.speechSynthesis.speak(msg)
 
     setTimeout(() => {
+      commit('STARTWAVE')
       speech = new webkitSpeechRecognition()
       speech.lang = 'en'
       speech.start()
-      commit('STARTWAVE')
       speech.addEventListener('result', (event) => {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
           if (event.results[i].isFinal) {
@@ -64,10 +64,10 @@ const actions = {
     window.speechSynthesis.speak(msg)
 
     setTimeout(() => {
+      commit('STARTWAVE')
       speech = new webkitSpeechRecognition()
       speech.lang = 'en'
       speech.start()
-      commit('STARTWAVE')
       speech.addEventListener('result', (event) => {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
           if (event.results[i].isFinal) {
