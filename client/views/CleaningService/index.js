@@ -7,11 +7,11 @@ export default {
             <div class={style.imagesWraper}>
              
                 <div>
-                    <img class={style.picture} src="../../../static/right-car-pic.jpeg"/>
+                    <img class={style.picture1} src="../../../static/right-car-pic.jpeg"/>
                 </div>
              
                 <div>
-                    <img class={style.picture} src="../../../static/left-car-pic.jpeg"/>
+                    <img class={style.picture2} src="../../../static/left-car-pic.jpeg"/>
                 </div>
                 
             </div>
@@ -21,5 +21,8 @@ export default {
             </div>
         </div>
     )
+  },
+  created() {
+    this.$store.dispatch('askAboutCleanCar', this.$router)
   }
 }

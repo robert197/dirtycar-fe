@@ -15,10 +15,19 @@
     width: 100%;   
 }
 
-.picture {
+.picture1 {
     width: 40em;
     border-radius: 17px;
     box-shadow: 0px 16px 30px rgba(8, 7, 7, 0.43);
+    animation-name: slideInFromLeft;
+    animation-duration: 1.3s;
+}
+.picture2 {
+    width: 40em;
+    border-radius: 17px;
+    box-shadow: 0px 16px 30px rgba(8, 7, 7, 0.43);
+    animation-name: slideInFromLeft;
+    animation-duration: 4.8s;
 }
 
 .mic {
